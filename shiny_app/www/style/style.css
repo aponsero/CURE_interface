@@ -10,7 +10,7 @@ body {
   height:50vh;
   min-height:50px;
   background-size:cover;
-  background-image:url('../images/banner1.jpg');
+  background-image:url('../images/banner1.png');
   background-position: top center;
 }
 
@@ -18,7 +18,7 @@ body {
   height:25vh;
   min-height:10px;
   background-size:cover;
-  background-image:url('../images/pied_page.jpg');
+  background-image:url('../images/pied_page.png');
   background-position: top center;
 }
  
