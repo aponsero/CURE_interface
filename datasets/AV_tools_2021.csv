@@ -1,6 +1,6 @@
-﻿tool_ID,Name,Code_availability,code_repository,web_interface,test_data,distribution,distribution_address
-t20211,DigestiFlow,yes,https://github.com/bihealth/digestiflow-server,NA,NA,bioconda,http://bioconda.github.io/recipes/digestiflow-cli/README.html
-t20212,ARGDIT,yes,https://github.com/phglab/ARGDIT,NA,NA,NA,NA
-t20213,DeepGO,yes,https://github.com/bio-ontology-research-group/deepgo,https://deepgo.cbrc.kaust.edu.sa/deepgo/,yes,NA,NA
-t20214,PlanExp,yes,https://github.com/scastlara/PlanExp-protocols#gene-co-expression-network-inference,https://compgen.bio.ub.edu/PlanNET/planexp,NA,NA,NA
-t20215,PlanNET,yes,https://github.com/scastlara/PlanExp-protocols#gene-co-expression-network-inference,https://compgen.bio.ub.edu/PlanNET/planexp,NA,NA,NA
+﻿tool_ID,Name,Code_availability,code_repository,link_code,web_interface,test_data,distribution,distribution_address
+t20211,DigestiFlow,yes,https://github.com/bihealth/digestiflow-server,"<a href=""https://github.com/bihealth/digestiflow-server"">access link</a>",NA,NA,bioconda,http://bioconda.github.io/recipes/digestiflow-cli/README.html
+t20212,ARGDIT,yes,https://github.com/phglab/ARGDIT,"<a href=""https://github.com/phglab/ARGDIT"">access link</a>",NA,NA,NA,NA
+t20213,DeepGO,yes,https://github.com/bio-ontology-research-group/deepgo,"<a href=""https://github.com/bio-ontology-research-group/deepgo"">access link</a>",https://deepgo.cbrc.kaust.edu.sa/deepgo/,yes,NA,NA
+t20214,PlanExp,yes,https://github.com/scastlara/PlanExp-protocols#gene-co-expression-network-inference,"<a href=""https://github.com/scastlara/PlanExp-protocols#gene-co-expression-network-inference"">access link</a>",https://compgen.bio.ub.edu/PlanNET/planexp,NA,NA,NA
+t20215,PlanNET,yes,https://github.com/scastlara/PlanExp-protocols#gene-co-expression-network-inference,"<a href=""https://github.com/scastlara/PlanExp-protocols#gene-co-expression-network-inference"">access link</a>",https://compgen.bio.ub.edu/PlanNET/planexp,NA,NA,NA
