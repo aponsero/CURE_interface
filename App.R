@@ -11,9 +11,9 @@ library(DT)
 
 # ----------------------------------
 # load dataset
-datasetJL <- read_csv("datasets/JL_Databases.2016.csv") 
+datasetJL <- read_csv("datasets/JL_Databases.2022.csv") 
 datasetJL$year_first_publication <- as.numeric(datasetJL$year_first_publication)
-articlesJL <- read_csv("datasets/JL_articles_DB.2016.csv", guess_max = 3200) 
+articlesJL <- read_csv("datasets/JL_articles_DB.2022.csv", guess_max = 3200) 
 
 ui <- navbarPage(title = "DS Heroes",
                  theme = "style/style.css",
@@ -43,20 +43,20 @@ ui <- navbarPage(title = "DS Heroes",
                                         h2("Selection databases"),
                                         sliderInput("DB_year", "date of first publication:",
                                                     min = 1991, max = 2020,
-                                                    value = c(2010,2020)),
-                                        sliderInput("DB_year_last", "date of last publication (as of 2016):",
+                                                    value = c(1991,2020)),
+                                        sliderInput("DB_year_last", "date of last publication (as of 2022):",
                                                     min = 1991, max = 2020,
-                                                    value = c(2010,2020)),
-                                        sliderInput("DB_citation", "number of citations in 2016:",
+                                                    value = c(1991,2020)),
+                                        sliderInput("DB_citation", "number of citations in 2022:",
                                                     min = 0, max = 18000,
                                                     value = c(0,18000)),
-                                        sliderInput("nb_publi", "number of publications in 2016:",
+                                        sliderInput("nb_publi", "number of publications in 2022:",
                                                     min = 0, max = 25,
                                                     value = c(0,25)),
-                                        checkboxGroupInput("access", "Availability in 2016:",
-                                                           c("available" = "yes",
-                                                             "not available" = "no"),
-                                                           selected=c("yes", "no")),
+                                        checkboxGroupInput("access", "Availability in 2022:",
+                                                           c("available" = "Yes",
+                                                             "not available" = "No"),
+                                                           selected=c("Yes", "No")),
                                         
                                         h4(),
                                         downloadButton("downloadData", "Download databases"),
@@ -109,10 +109,10 @@ server <- function(input, output) {
     db_selection <- reactive({
       datasetJL %>%  filter(year_first_publication>=input$DB_year[1] & year_first_publication<=input$DB_year[2]) %>%
         filter(year_last_publication>=input$DB_year_last[1] & year_last_publication<=input$DB_year_last[2]) %>%
-        filter(total_citation_2016>=input$DB_citation[1] & total_citation_2016<=input$DB_citation[2]) %>%
-        filter(nb_articles_2016>=input$nb_publi[1] & nb_articles_2016<=input$nb_publi[2]) %>%
-        filter(available_2016 %in% input$access)
-      # here change to 2021 when update dataset complete
+        filter(total_citations_2022>=input$DB_citation[1] & total_citations_2022<=input$DB_citation[2]) %>%
+        filter(nb_articles_2022>=input$nb_publi[1] & nb_articles_2022<=input$nb_publi[2]) %>%
+        filter(available_2022 %in% input$access)
+      # here change to latest year when update dataset complete
     })
     
     article_selection <- reactive({
@@ -121,9 +121,9 @@ server <- function(input, output) {
     })
     
     output$avaibility_chart <- renderPlot({  
-      display_dataset <- db_selection() %>% group_by(available_2016) %>% tally()
+      display_dataset <- db_selection() %>% group_by(available_2022) %>% tally()
       
-      display_dataset  %>%  ggplot(aes(x="", y=n, fill=available_2016)) +
+      display_dataset  %>%  ggplot(aes(x="", y=n, fill=available_2022)) +
         geom_bar(stat="identity", width=1, color="white") +
         coord_polar("y", start=0) +
         theme_void()+
@@ -133,7 +133,7 @@ server <- function(input, output) {
     output$nb_citations_chart <- renderPlot({  
       display_dataset <- db_selection() 
       
-      display_dataset %>% ggplot(aes(x=total_citation_2021)) +
+      display_dataset %>% ggplot(aes(x=total_citations_2022)) +
         geom_histogram(fill="#00BFC4") +
         theme_minimal()+
         ggtitle("Distribution of citations")
