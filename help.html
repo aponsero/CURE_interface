@@ -1,24 +1,67 @@
 <!-- page content -->
-
 <section id="help">
-<div class="container" id="container-main">
-<div class="col-12 text-center">
-	<div>
-		<hr>
-	</div>
-  	<h2 class="font-weight-light">How to use the Database ?</h2>
-</div>
- <div class="col-12 text-center">
-		<p> A MORE DETAILED HELP IS UNDER CREATION
- 		</br></br> </p>
-		
-	</div>
-</div>
-</section>
+    <div class="container" id="container-main">
+        <div class="col-12 text-center">
+            <div>
+                <hr>
+            </div>
+            <h2 class="font-weight-light">How to use the Database?</h2>
+        </div>
+        <div class="col-12">
+            <p>The interface allows you to select and download two tables:</p>
+            
+            <h3>A. Databases table</h3>
+            <p>Contains the information of each database published in the NAR database issue.</p>
+            <ul>
+                <li><strong>db_id:</strong> Database ID in the dataset</li>
+                <li><strong>resource_name:</strong> Name(s) of the database</li>
+                <li><strong>current_access:</strong> Latest known web address of the database</li>
+                <li><strong>is_a_pun:</strong> The database name is a play on word</li>
+                <li><strong>available_2022:</strong> The database was accessible online during the 2022 survey</li>
+                <li><strong>last_accessible_year:</strong> If not accessible, latest point in time where the database was found online (using the Internet web archive snapshots)</li>
+                <li><strong>unavailable_message:</strong> If not accessible, the message/error when trying to access the resource</li>
+                <li><strong>year_first_publication:</strong> Year of first publication of the database</li>
+                <li><strong>year_last_publication:</strong> Year of latest publication of the database (including database update publications)</li>
+                <li><strong>total_citations_2022:</strong> Cumulative number of citations for all articles of the database</li>
+                <li><strong>nb_authors_max:</strong> Maximum number of authors associated with any articles published for that database</li>
+                <li><strong>nb_articles_2022:</strong> Number of articles published for that database in 2022</li>
+            </ul>
 
+            <h3>B. Articles table</h3>
+            <p>Contains the information collected for the NAR articles</p>
+            <ul>
+                <li><strong>collector:</strong> Person who contributed to add this database in the dataset</li>
+                <li><strong>article_global_id:</strong> DOI of the article surveyed</li>
+                <li><strong>db_id:</strong> Database ID of the resource described in the article</li>
+                <li><strong>article_id:</strong> Article unique ID</li>
+                <li><strong>article_year:</strong> Article publication year</li>
+                <li><strong>Authors:</strong> List of authors of the article. Separated by ";"</li>
+                <li><strong>Author.ID:</strong> List of ORCID of the authors of the article. Separated by ";"</li>
+                <li><strong>Title:</strong> Title of the article</li>
+                <li><strong>Source.title:</strong> Journal name</li>
+                <li><strong>Volume:</strong> Volume number</li>
+                <li><strong>Issue:</strong> Issue number</li>
+                <li><strong>Funding.Details:</strong> Funding information of the article</li>
+                <li><strong>Funding.Text:</strong> Funding text provided by the authors</li>
+                <li><strong>PubMed.ID:</strong> PubMed ID of the article</li>
+                <li><strong>citations_2016:</strong> Number of citations of the article in 2016 (if published)</li>
+                <li><strong>citations_2022:</strong> Number of citations of the article in 2022</li>
+                <li><strong>nb_authors:</strong> Number of authors in the article</li>
+                <li><strong>Index.Keywords:</strong> Keywords associated with the publication</li>
+            </ul>
+
+            <h3>Data sources</h3>
+            <p>Note that the presented dataset leverages and expands on the dataset gathered and published in:</p>
+            <blockquote>
+                Imker, H.J., 2020. Who Bears the Burden of Long-Lived Molecular Biology Databases?. Data Science Journal, 19(1), p.8
+            </blockquote>
+            <p>The dataset was collected and is maintained by undergraduate students of a CURE class (Course-based Undergraduate Research Experience) held at the University of Arizona. All students of the class have participated in the collection, update, and curation of the dataset that is available as a database and a web-portal. Students could elect to be added or not as authors to this Zenodo repository.</p>
+        </div>
+    </div>
+</section>
 <section class="last">
-	<div class="container h-10">
-		<div class="row h-100 align-items-center">
-		</div>
-	</div>
+    <div class="container h-10">
+        <div class="row h-100 align-items-center">
+        </div>
+    </div>
 </section>
